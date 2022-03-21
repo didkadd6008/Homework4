@@ -1,0 +1,8 @@
+gcc -E program.c -o program.i //stop after processing stage
+gcc -E swap.c -o swap.i
+gcc -S program.i -o program.s //to assembly code
+gcc -S swap.i -o swap.s
+gcc -c program.s -o program.o //creating position independent code using
+gcc -c swap.s -o swap.o
+ gcc program.o swap.o -o program //linkig the two compiled files
+ ./program
